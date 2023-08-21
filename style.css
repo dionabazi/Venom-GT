@@ -665,14 +665,31 @@ Burger
         padding: 0;
         box-sizing: border-box;
     }
+    .container-1 .row {
+        flex-direction: column;
+        row-gap: 20px;
+        justify-content: space-between;
+    }
     .container {
         background-attachment: fixed;
     }
     .container header ul li {
         margin-left: 10px;
     }
+    .foot .col {
+        font-size: 10px;
+    }
+    .foot .row {
+        font-size: 10px;
+    }
+    .foot img {
+        display: none;
+    }
     .container header .row {
         display: none;
+    }
+    .container header img {
+        width: 150px;
     }
     .container header {
         padding: 30px !important;
@@ -687,7 +704,7 @@ Burger
         padding: 0px;
     }
     .column button {
-        width: 350px;
+        width: 250px;
         height: 50px;
     }
     .column .row {
@@ -716,6 +733,11 @@ Burger
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    .container-1 .row {
+        flex-direction: column;
+        row-gap: 20px;
+        justify-content: space-between;
     }
     .container {
         background-attachment: fixed;
