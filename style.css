@@ -673,6 +673,9 @@ Burger
         row-gap: 20px;
         justify-content: space-between;
     }
+    .container {
+        height: 100%;
+    }
     #hamburger-menu a {
         color: #fff;
     }
