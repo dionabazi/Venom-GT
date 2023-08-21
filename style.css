@@ -1,0 +1,814 @@
+body,
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+--webkit-scrollbar {
+    display: none;
+}
+
+
+/* 
+Burger
+*/
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 5;
+}
+
+#logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+#main-menu {
+    display: block;
+    height: 100px;
+    width: 100%;
+    background: #3D0E61;
+    margin: 0px;
+    z-index: 9;
+}
+
+#main-menu ul {
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 9;
+}
+
+#main-menu li {
+    list-style-type: none;
+    font-size: 2rem;
+}
+
+#main-menu a {
+    color: #B9FAF8;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#main-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+#hamburger-menu {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: inline;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Cabin', Sans-serif;
+    background: linear-gradient( to bottom, #fff, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+}
+
+#hamburger-menu #sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+    color: #222222;
+    font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+    padding-left: 0px;
+}
+
+#hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+}
+
+#hamburger-menu a {
+    color: #222222;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input:checked+#hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+
+#hamburger-input:checked~.overlay {
+    visibility: visible;
+    opacity: 0.4;
+}
+
+
+/*
+Burger
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-image: url(./hennessey-venom-f5-022718-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    background-attachment: fixed;
+}
+
+.container header {
+    width: 100%;
+    background-color: #0a0a0a;
+    padding: 30px;
+    z-index: 111;
+    position: fixed;
+    column-gap: 20px;
+    display: flex;
+}
+
+.container header img {
+    position: relative;
+    cursor: pointer;
+    width: 300px;
+}
+
+.container ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    background: #fff;
+    height: 1.2px;
+    top: 20px;
+}
+
+.container ul li :hover::before {
+    transition: 1s cubic-bezier(0.23, 1, 0.320, 1);
+    width: 100%;
+}
+
+.container header .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.container header ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.container header ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.blog {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.blog .viddeo {
+    z-index: 10;
+    position: relative;
+    padding-top: 50px;
+    padding-left: 70px;
+}
+
+.blog video {
+    width: 95%;
+    height: 100%;
+}
+
+.blog .row {
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    font-family: sans-serif;
+    color: #535353;
+    font-size: 15px;
+    padding-top: 50px;
+}
+
+.blog .col {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    font-family: sans-serif;
+    color: #535353;
+    padding-top: 50px;
+    font-size: 15px;
+}
+
+.blog strong {
+    font-weight: 1000;
+}
+
+.blog .content {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.container-1 {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.container-1 .row {
+    padding: 10px 70px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.container-1 img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.column {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.column .row {
+    z-index: 10;
+    position: relative;
+    padding-top: 50px;
+    padding-left: 70px;
+}
+
+.column video {
+    width: 95%;
+    height: 100%;
+}
+
+.column .col {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: #535353;
+    padding-top: 50px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.column .para {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: #535353;
+    font-family: sans-serif;
+    padding-top: 20px;
+}
+
+.column .referat {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding-top: 50px;
+}
+
+.column .color {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .gap {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .cont {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .important {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .ulist {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .list {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .torque {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .gic {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .gapped {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .best {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .multiple {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .qerap {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .selak {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .kodra {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .nike {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .addidas {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .font {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .size {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .blogger {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .vlogger {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .inconel {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .flow {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .flow2 {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .flow3,
+.column .flow4,
+.column .flow5,
+.column .flow6,
+.column .flow7 {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .flow8,
+.column .flow9,
+.column .flow10,
+.column .flow11,
+.column .flow12 {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .flow13,
+.column .flow14,
+.column .flow15,
+.column .flow16,
+.column .flow17,
+.column .flow18,
+.column .flow19 {
+    text-align: start;
+    position: relative;
+    justify-content: start;
+    color: #535353;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.column .btn {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-top: 50px;
+    font-family: sans-serif;
+}
+
+.column button {
+    width: 550px;
+    height: 60px;
+    background-color: #cd2122;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.column button:hover {
+    transition: .4s ease-in-out;
+    background-color: #cd2134;
+}
+
+.foot {
+    background-color: #2f2f2f;
+    width: 100%;
+    padding: 2rem;
+    z-index: 1111;
+}
+
+.foot .image {
+    text-align: start;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    padding-top: 50px;
+}
+
+.foot img {
+    width: 100%;
+}
+
+.foot .row {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-family: sans-serif;
+    color: #535353;
+}
+
+.foot .col {
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-family: sans-serif;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.foot h3 {
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.foot h3:hover {
+    transition: 0s ease-in;
+    color: #535353;
+}
+
+@media (max-width:650px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        background-attachment: fixed;
+    }
+    .container header ul li {
+        margin-left: 10px;
+    }
+    .container header .row {
+        display: none;
+    }
+    .container header {
+        padding: 30px !important;
+    }
+    .blog .viddeo {
+        padding: 50px 20px;
+    }
+    .burger {
+        display: block;
+    }
+    .container header {
+        padding: 0px;
+    }
+    .column button {
+        width: 350px;
+        height: 50px;
+    }
+    .column .row {
+        padding: 50px 20px;
+    }
+    .foot {
+        padding: 50px 0;
+    }
+    .foot .image {
+        text-align: start;
+        display: flex;
+        position: relative;
+        justify-content: start;
+    }
+    .foot .row {
+        font-size: 12px;
+    }
+}
+
+@media (651px <=width <=897px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        background-attachment: fixed;
+    }
+    .container header ul li {
+        margin-left: 10px;
+    }
+    .burger {
+        display: block;
+    }
+    .container header .row {
+        display: none;
+    }
+    #hamburger-menu a {
+        color: #fff;
+    }
+    #hamburger-menu #sidebar-menu {
+        background-color: #000;
+    }
+    .column .row {
+        padding: 50px 20px;
+    }
+    .blog .viddeo {
+        padding: 50px 20px;
+    }
+    .column button {
+        width: 450px;
+        height: 50px;
+    }
+}
+
+@media (898px <=width <=1024px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        background-attachment: fixed;
+    }
+    .container ul {
+        display: flex;
+    }
+    .container header img {
+        width: 250px;
+    }
+    .container header ul li {
+        font-size: 11px;
+    }
+    #hamburger-menu a {
+        color: #fff;
+    }
+    .blog .viddeo {
+        padding: 50px 20px;
+    }
+    .column .row {
+        padding: 50px 20px;
+    }
+}
+
+@media (1025px <=width <=1241px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        background-attachment: fixed;
+    }
+    .blog .viddeo {
+        padding: 50px 20px;
+    }
+    .column .row {
+        padding: 50px 20px;
+    }
+}
+
+@media only screen and (min-width:1241px) {
+    body,
+    html {
+        overflow-x: hidden;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
